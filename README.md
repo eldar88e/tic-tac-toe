@@ -2,7 +2,7 @@
 
 ![Game logo](public/img/game.webp)
 
-**Description**: Tic tac game use PixiJS engine.
+**Description**: A Tic-Tac-Toe game built with PixiJS.
 
 ## Demo
 https://.../
