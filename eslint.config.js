@@ -3,7 +3,7 @@ import js from '@eslint/js';
 
 export default defineConfig([
 	{
-		ignores: ['dist/**'],
+		ignores: ['dist/**', 'tmp/**'],
 	},
 	{
 		files: ['**/*.js'],
@@ -27,9 +27,6 @@ export default defineConfig([
 				Event: 'readonly',
 				console: 'readonly',
 				navigator: 'readonly',
-				require: 'readonly',
-				module: 'readonly',
-				__dirname: 'readonly',
 				setTimeout: 'readonly',
 				clearTimeout: 'readonly',
 			},
