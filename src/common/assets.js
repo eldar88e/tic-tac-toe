@@ -17,7 +17,5 @@ export const appTextures = {
 	zero: 'img/zero.webp',
 	bg: 'img/bg.svg',
 	logo: 'img/logo.webp',
-	playerOne: 'img/playerOne.webp',
-	playerTwo: 'img/playerTwo.webp',
 	sound: 'img/sound.webp',
 };

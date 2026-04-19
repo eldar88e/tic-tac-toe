@@ -23,12 +23,12 @@ export default function createBtnStart(app) {
 	
 	const buttonText = new PixiElement({
 		type: elementType.TEXT,
-		text: 'Start game',
+		text: 'START GAME',
 		anchor: [0.5],
 		position: [150 / 2, 50 / 2],
 		style: {
 			fontFamily: 'Arial',
-			fontSize: 24,
+			fontSize: 20,
 			fill: 0x000000,
 			align: 'center',
 		},

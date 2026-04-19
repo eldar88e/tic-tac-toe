@@ -24,6 +24,7 @@ export class GameManager {
 		this.playerTwo = getUIElement(players, labels.playerTwo);
 		this.gameOver = gameOver;
 		this.draw = getUIElement(gameOver, labels.draw);
+		this.drawText = getUIElement(gameOver, labels.drawText);
 		this.trophy = getUIElement(gameOver, labels.trophy);
 		this.playerOneName = getUIElement(gameOver, labels.playerOneName);
 		this.playerTwoName = getUIElement(gameOver, labels.playerTwoName);
@@ -112,6 +113,7 @@ export class GameManager {
 				this.draw.visible = true;
 				this.gameOver.visible = true;
 				animateContainer(this.gameOver);
+				animateContainer(this.drawText);
 			} else {
 				this.trophy.visible = true;
 				this.gameOver.visible = true;
@@ -151,6 +153,7 @@ export class GameManager {
 		this.gameOver.visible = false;
 		this.draw.visible = false;
 		this.trophy.visible = false;
+		this.drawText.scale.set(0);
 		this.playerOneName.scale.set(0);
 		this.playerTwoName.scale.set(0);
 

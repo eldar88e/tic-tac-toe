@@ -41,6 +41,23 @@ export default function createContainerGameOver(app) {
 		label: labels.draw
 	});
 	const containerDraw = draw.getElement();
+
+	const drawText = new PixiElement({
+		type: elementType.TEXT,
+		text: 'Draw!',
+		style: {
+			fontSize: 42,
+			fill: 0xffffff,
+			fontFamily: 'Arial',
+			fontWeight: '700',
+			align: 'center'
+		},
+		label: labels.drawText,
+		anchor: [0.5, 0.5],
+		scale: [0, 0],
+		position: [containerBg.width / 2, containerBg.height / 6]
+	});
+	const containerDrawText = drawText.getElement();
 	
 	// Player One name
 	const playerOneName = new PixiElement({
@@ -95,10 +112,10 @@ export default function createContainerGameOver(app) {
 	
 	const buttonText = new PixiElement({
 		type: elementType.TEXT,
-		text: 'Play again',
+		text: 'PLAY AGAIN',
 		style: {
 			fontFamily: 'Arial',
-			fontSize: 24,
+			fontSize: 20,
 			fill: 0x000000,
 			align: 'center'
 		},
@@ -124,6 +141,7 @@ export default function createContainerGameOver(app) {
 		containerBg,
 		containerTrophy,
 		containerDraw,
+		containerDrawText,
 		containerPlayerOne,
 		containerPlayerTwo,
 		containerPlayAgainButton

@@ -9,6 +9,7 @@ export const labels = {
 	gameOver: 'gameOver',
 	trophy: 'trophy',
 	draw: 'draw',
+	drawText: 'drawText',
 	playerOneName: 'playerOneName',
 	playerTwoName: 'playerTwoName',
 	playAgainButton: 'playAgainButton',
