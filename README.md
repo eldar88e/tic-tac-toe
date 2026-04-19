@@ -5,7 +5,7 @@
 **Description**: A Tic-Tac-Toe game built with PixiJS.
 
 ## Demo
-https://.../
+https://tic-tac-toe-ebon-seven-53.vercel.app/
 
 ### Installation
 
