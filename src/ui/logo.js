@@ -3,11 +3,8 @@ import { gsap } from 'gsap';
 import { allTextureKeys } from '../common/assets.js';
 import { elementType, labels } from '../common/enums.js';
 import { PixiElement } from '../utils/PixiElement.js';
-import { getAppInstance } from '../utils/utils.js';
 
-export default function createLogo() {
-	const app = getAppInstance();
-
+export default function createLogo(app) {
 	const logo = new PixiElement(
 		{
 			type: elementType.SPRITE,

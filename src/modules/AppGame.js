@@ -9,7 +9,7 @@ export class AppGame {
 	constructor() {
 		this.app = null;
 		this.container = document.getElementById(CONTAINER_ID);
-		this.game = new MainGame(this.app);
+		this.game = null; // new MainGame(this.app);
 	}
 
 	async initGame() {

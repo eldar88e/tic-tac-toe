@@ -13,6 +13,7 @@ export class GameManager {
 	constructor(app) {
 		this.app = app;
 		this.blur = new BlurFilter({ strength: 4 });
+		this.isStarted = false;
 
 		const gameContainer = getUIElement(this.app.stage, labels.game);
 		const players = getUIElement(gameContainer, labels.playersContainer);
@@ -122,7 +123,12 @@ export class GameManager {
 	};
 
 	startGame = () => {
+		if (this.isStarted) return;
+
+		this.isStarted = true;
 		this.board.visible = true;
+		this.btnStart.visible = false;
+		this.btnStart.eventMode = 'none';
 		scaleTarget(this.playerOne);
 		soundManager.play('bg');
 	};

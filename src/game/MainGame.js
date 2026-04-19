@@ -41,7 +41,7 @@ export class MainGame {
 		await this.loadAppAssets();
 
 		this.gameContainer.addChild(
-			createLogo(),
+			createLogo(app),
 			createPlayers(app),
 			createBtnStart(app),
 			createBoard(app),
