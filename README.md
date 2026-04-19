@@ -1,6 +1,6 @@
 # Tic-Tac-Toe
 
-![Game logo](public/img/game.webp)
+![Game logo](public/img/logo.webp)
 
 **Description**: A Tic-Tac-Toe game built with PixiJS.
 
