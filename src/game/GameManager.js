@@ -108,6 +108,22 @@ export class GameManager {
 			// Останавливаем анимацию для обоих игроков
 			gsap.killTweensOf(this.playerOne.scale);
 			gsap.killTweensOf(this.playerTwo.scale);
+			gsap.killTweensOf(this.gameOver.scale);
+			gsap.killTweensOf(this.gameOver);
+			gsap.killTweensOf(this.drawText.scale);
+			gsap.killTweensOf(this.drawText);
+			gsap.killTweensOf(this.playerOneName.scale);
+			gsap.killTweensOf(this.playerOneName);
+			gsap.killTweensOf(this.playerTwoName.scale);
+			gsap.killTweensOf(this.playerTwoName);
+
+			this.drawText.scale.set(0);
+			this.playerOneName.scale.set(0);
+			this.playerTwoName.scale.set(0);
+			this.drawText.rotation = 0;
+			this.playerOneName.rotation = 0;
+			this.playerTwoName.rotation = 0;
+			this.gameOver.rotation = 0;
 
 			if (result.winner === null) {
 				this.draw.visible = true;
@@ -160,6 +176,19 @@ export class GameManager {
 		// Сбрасываем анимации игроков
 		gsap.killTweensOf(this.playerOne.scale);
 		gsap.killTweensOf(this.playerTwo.scale);
+		gsap.killTweensOf(this.gameOver.scale);
+		gsap.killTweensOf(this.gameOver);
+		gsap.killTweensOf(this.drawText.scale);
+		gsap.killTweensOf(this.drawText);
+		gsap.killTweensOf(this.playerOneName.scale);
+		gsap.killTweensOf(this.playerOneName);
+		gsap.killTweensOf(this.playerTwoName.scale);
+		gsap.killTweensOf(this.playerTwoName);
+
+		this.gameOver.rotation = 0;
+		this.drawText.rotation = 0;
+		this.playerOneName.rotation = 0;
+		this.playerTwoName.rotation = 0;
 
 		// Запускаем анимацию первого игрока
 		scaleTarget(this.playerOne);

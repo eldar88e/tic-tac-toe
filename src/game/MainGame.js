@@ -53,6 +53,6 @@ export class MainGame {
 		this.gameManager = new GameManager(app);
 		eventBus.emit('startGame');
 
-		return this.gameContainer;
+		// return this.gameContainer;
 	};
 }

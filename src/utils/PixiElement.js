@@ -23,6 +23,7 @@ export class PixiElement {
 			scale: (el, scale) => el.scale.set(...scale),
 			anchor: (el, anchor) => el.anchor.set(...anchor),
 			alpha: (el, alpha) => (el.alpha = alpha),
+			visible: (el, visible) => (el.visible = visible),
 			eventMode: (el, mode) => (el.eventMode = mode),
 			cursor: (el, cursor) => (el.cursor = cursor),
 			interactive: (el, interactive) => (el.interactive = interactive),

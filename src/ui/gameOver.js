@@ -27,6 +27,7 @@ export default function createContainerGameOver(app) {
 		texture: allTextureKeys.trophy,
 		position: [containerBg.width / 2, containerBg.height / 2],
 		label: labels.trophy,
+		visible: false,
 		anchor: [0.5, 0.5]
 	});
 	const containerTrophy = trophy.getElement();
