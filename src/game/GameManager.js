@@ -35,7 +35,7 @@ export class GameManager {
 		this.slash = getUIElement(soundButton, labels.muteSlash);
 
 		eventBus.on('cellClick', this.handleCellClick);
-		eventBus.on('startGame', this.startGame);
+		// eventBus.on('startGame', this.startGame);
 		eventBus.on('restartGame', this.restartGame);
 		eventBus.on('toggleSound', this.toggleSound);
 

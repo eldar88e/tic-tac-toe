@@ -2,7 +2,6 @@ import { defineConfig } from 'vite';
 import viteImagemin from 'vite-plugin-imagemin';
 
 export default defineConfig({
-	base: './',
 	server: {
 		port: 8081,
 		host: '0.0.0.0',
@@ -10,24 +9,16 @@ export default defineConfig({
 	},
 	build: {
 		assetsDir: 'assets',
-		rollupOptions: {
+		chunkSizeWarningLimit: 800,
+		rolldownOptions: {
 			output: {
-				assetFileNames: 'assets/[name].[hash][extname]'
-			}
+				codeSplitting: false,
+			},
 		},
 		sourcemap: false,
-		target: 'esnext'
 	},
 	define: {
 		'process.env.NODE_ENV': JSON.stringify('production')
-	},
-	alias: {
-		crypto: false,
-		stream: false,
-		buffer: false,
-	},
-	esbuild: {
-		target: 'esnext'
 	},
 	plugins: [
 		viteImagemin({

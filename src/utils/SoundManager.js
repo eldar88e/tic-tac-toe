@@ -22,9 +22,11 @@ class SoundManager {
 	}
 
 	play(soundName) {
-		if (this.sounds[soundName]) {
-			this.sounds[soundName].play();
-		}
+		const sound = this.sounds[soundName];
+		if (!sound) return;
+		if (soundName === 'bg' && sound.playing()) return;
+
+		sound.play();
 	}
 
 	toggleMute() {

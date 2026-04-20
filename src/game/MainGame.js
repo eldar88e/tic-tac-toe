@@ -12,7 +12,6 @@ import {
 	createPlayers,
 	createSoundButton,
 } from '../ui/index.js';
-import { eventBus } from '../utils/EventBus.js';
 
 export class MainGame {
 	constructor(app) {
@@ -51,7 +50,6 @@ export class MainGame {
 		app.stage.addChild(this.gameContainer);
 
 		this.gameManager = new GameManager(app);
-		eventBus.emit('startGame');
 
 		// return this.gameContainer;
 	};
