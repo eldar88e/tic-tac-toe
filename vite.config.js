@@ -9,13 +9,7 @@ export default defineConfig({
 		open: true
 	},
 	build: {
-		assetsDir: 'assets',
 		chunkSizeWarningLimit: 800,
-		// rolldownOptions: {
-		// 	output: {
-		// 		codeSplitting: false,
-		// 	},
-		// },
 		sourcemap: false,
 	},
 	define: {

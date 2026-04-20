@@ -1,3 +1,4 @@
+import './style.css';
 import { AppGame } from './modules/AppGame.js';
 
 (async () => {
