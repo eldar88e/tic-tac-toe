@@ -68,12 +68,10 @@ export class GameManager {
 		let cellValue = null;
 		if (gameState.currentPlayer === gameValues.cross) {
 			cellValue = createSprite(allTextureKeys.cross);
-			scaleTarget(this.playerTwo);
-			gsap.killTweensOf(this.playerOne.scale);
+			this.setActivePlayerIndicator(this.playerTwo, this.playerOne);
 		} else {
 			cellValue = createSprite(allTextureKeys.zero);
-			scaleTarget(this.playerOne);
-			gsap.killTweensOf(this.playerTwo.scale);
+			this.setActivePlayerIndicator(this.playerOne, this.playerTwo);
 		}
 
 		if (cellValue) {
@@ -129,7 +127,7 @@ export class GameManager {
 		this.board.visible = true;
 		this.btnStart.visible = false;
 		this.btnStart.eventMode = 'none';
-		scaleTarget(this.playerOne);
+		this.setActivePlayerIndicator(this.playerOne, this.playerTwo);
 		soundManager.play('bg');
 	};
 
@@ -152,7 +150,7 @@ export class GameManager {
 		this.stopAllAnimations();
 		this.resetRotationLogo();
 
-		scaleTarget(this.playerOne);
+		this.setActivePlayerIndicator(this.playerOne, this.playerTwo);
 	};
 
 	toggleSound = () => {
@@ -183,6 +181,19 @@ export class GameManager {
 			this.playerTwoName.scale,
 			this.playerTwoName,
 		].forEach(target => gsap.killTweensOf(target));
+
+		this.resetPlayerIndicators();
+	}
+
+	setActivePlayerIndicator(activePlayer, inactivePlayer) {
+		gsap.killTweensOf(inactivePlayer.scale);
+		inactivePlayer.scale.set(1);
+		scaleTarget(activePlayer);
+	}
+
+	resetPlayerIndicators() {
+		this.playerOne.scale.set(1);
+		this.playerTwo.scale.set(1);
 	}
 
 	stopScalePlayerLogo() {
