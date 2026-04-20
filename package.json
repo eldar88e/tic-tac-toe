@@ -22,7 +22,7 @@
     "eslint-define-config": "^2.1.0",
     "eslint-plugin-prettier": "^5.4.0",
     "prettier": "^3.5.3",
-    "vite": "^8.0.8",
+    "vite": "^8.0.9",
     "vite-plugin-imagemin": "^0.6.1",
     "vite-plugin-singlefile": "^2.3.3"
   }
