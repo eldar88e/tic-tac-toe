@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import viteImagemin from 'vite-plugin-imagemin';
+import { viteSingleFile } from 'vite-plugin-singlefile';
 
 export default defineConfig({
 	server: {
@@ -10,17 +11,18 @@ export default defineConfig({
 	build: {
 		assetsDir: 'assets',
 		chunkSizeWarningLimit: 800,
-		rolldownOptions: {
-			output: {
-				codeSplitting: false,
-			},
-		},
+		// rolldownOptions: {
+		// 	output: {
+		// 		codeSplitting: false,
+		// 	},
+		// },
 		sourcemap: false,
 	},
 	define: {
 		'process.env.NODE_ENV': JSON.stringify('production')
 	},
 	plugins: [
+		viteSingleFile(),
 		viteImagemin({
 			webp: {
 				quality: 75,
