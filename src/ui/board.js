@@ -1,5 +1,6 @@
 import { elementType, labels } from '../common/enums.js';
 import { gameState } from '../game/GameState.js';
+import { layoutCellSymbol } from '../helpers/index.js';
 import { eventBus } from '../utils/EventBus.js';
 import { PixiElement } from '../utils/PixiElement.js';
 
@@ -61,9 +62,6 @@ export default function createBoard(app) {
 		}, () => onCellGraphicsResize(graphics, i), true);
 		const elementGraphics = graphics.getElement();
 		
-		// сохранить спрайт
-		cell.sprite = elementGraphics;
-		
 		cellContainer.addChildren([elementGraphics]);
 		
 		board.addChildren([containerCellContainer]);
@@ -104,7 +102,14 @@ export default function createBoard(app) {
 		cellSize = getAdaptiveCellSize();
 		const col = i % 3;
 		const row = Math.floor(i / 3);
-		cellContainer.getElement().position.set(boardPadding + col * (cellSize + gap), boardPadding + row * (cellSize + gap));
+		const cellElement = cellContainer.getElement();
+		const cell = gameState.board[i];
+
+		cellElement.position.set(boardPadding + col * (cellSize + gap), boardPadding + row * (cellSize + gap));
+
+		if (cell.sprite && cellElement.children.includes(cell.sprite)) {
+			layoutCellSymbol(cell.sprite, cellSize);
+		}
 	}
 	
 	function onCellGraphicsResize(graphics) {

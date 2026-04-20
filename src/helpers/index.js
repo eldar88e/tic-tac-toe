@@ -8,6 +8,16 @@ export function createSprite(textureKey) {
 
 export const getUIElement = (container, label) => container.getChildByLabel(label);
 
+export function layoutCellSymbol(sprite, cellSize, fillRatio = 0.6) {
+	const { width, height } = sprite.texture.orig;
+	const targetScale = (cellSize * fillRatio) / Math.max(width, height);
+
+	sprite.position.set(cellSize / 2, cellSize / 2);
+	sprite.scale.set(targetScale);
+
+	return targetScale;
+}
+
 export function animateContainer(target) {
 	gsap.to(target.scale, {
 		duration: 1,

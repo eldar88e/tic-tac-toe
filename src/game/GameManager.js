@@ -3,7 +3,7 @@ import { BlurFilter, Container } from 'pixi.js';
 
 import { allTextureKeys } from '../common/assets.js';
 import {gameValues, winLines, labels} from '../common/enums.js';
-import { animateContainer, createSprite, scaleTarget, getUIElement } from '../helpers/index.js';
+import { animateContainer, createSprite, layoutCellSymbol, scaleTarget, getUIElement } from '../helpers/index.js';
 import { clearVictoryConfetti, showVictoryConfetti } from '../ui/victory.js';
 import { eventBus } from '../utils/EventBus.js';
 import { soundManager } from '../utils/SoundManager.js';
@@ -76,12 +76,13 @@ export class GameManager {
 
 		if (cellValue) {
 			cellValue.anchor.set(0.5, 0.5);
-			cellValue.position.set(cellSize / 2, cellSize / 2);
+			const targetScale = layoutCellSymbol(cellValue, cellSize);
+			cell.sprite = cellValue;
 
 			gsap.fromTo(
 				cellValue.scale,
 				{y: 0, x: 0},
-				{y: 0.2, x: 0.2}
+				{y: targetScale, x: targetScale}
 			);
 			cellContainer.addChild(cellValue);
 		}

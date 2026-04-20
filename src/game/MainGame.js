@@ -23,7 +23,7 @@ export class MainGame {
 
 	async loadAppAssets() {
 		if (!appTextures || typeof appTextures !== 'object') {
-			throw new Error('appTextures не определен или имеет неверный формат');
+			throw new Error('appTextures is not defined or has an invalid format');
 		}
 
 		const assetBundles = Object.entries(appTextures).map(([key, url]) => ({
@@ -51,6 +51,7 @@ export class MainGame {
 
 		this.gameManager = new GameManager(app);
 
+		// this.gameManager TODO: for game stop and delete listeners and stop all animations
 		// return this.gameContainer;
 	};
 }
