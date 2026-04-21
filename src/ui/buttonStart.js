@@ -39,7 +39,7 @@ export default function createBtnStart(app) {
 	
 	buttonElement.pivot.set(buttonElement.width / 2, buttonElement.height / 2);
 	
-	gsap.to(buttonElement.scale, {
+	buttonElement.pulseTween = gsap.to(buttonElement.scale, {
 		x: 1.2,
 		y: 1.2,
 		duration: 0.6,
@@ -47,6 +47,7 @@ export default function createBtnStart(app) {
 		repeat: -1,
 		ease: 'sine.inOut',
 	});
+	buttonElement.pulseTween.play();
 	
 	function onResizeHandler() {
 		buttonElement.position.set(app.renderer.width / 2, app.renderer.height / 2);

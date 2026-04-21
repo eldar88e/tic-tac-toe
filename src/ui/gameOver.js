@@ -129,7 +129,7 @@ export default function createContainerGameOver(app) {
 	containerPlayAgainButton.pivot.set(150 / 2, 50 / 2);
 	containerPlayAgainButton.position.set(containerBg.width / 2, containerBg.height - 50);
 	
-	gsap.to(containerPlayAgainButton.scale, {
+	containerPlayAgainButton.pulseTween = gsap.to(containerPlayAgainButton.scale, {
 		x: 1.05,
 		y: 1.05,
 		duration: 0.6,
@@ -137,6 +137,7 @@ export default function createContainerGameOver(app) {
 		repeat: -1,
 		ease: 'sine.inOut'
 	});
+	containerPlayAgainButton.pulseTween.pause(0);
 	
 	gameOver.addChildren([
 		containerBg,

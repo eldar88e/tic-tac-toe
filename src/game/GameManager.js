@@ -33,6 +33,8 @@ export class GameManager {
 		this.playAgainButton = getUIElement(gameOver, labels.playAgainButton);
 		this.soundButton = soundButton;
 		this.slash = getUIElement(soundButton, labels.muteSlash);
+		this.startButtonPulseTween = this.btnStart.pulseTween;
+		this.playAgainPulseTween = this.playAgainButton.pulseTween;
 
 		eventBus.on('cellClick', this.handleCellClick);
 		// eventBus.on('startGame', this.startGame);
@@ -113,6 +115,7 @@ export class GameManager {
 					: animateContainer(this.playerTwoName);
 			}
 
+			this.playAgainPulseTween?.play();
 			showVictoryConfetti(this.app);
 			soundManager.play('win');
 			return;
@@ -128,6 +131,7 @@ export class GameManager {
 		this.board.visible = true;
 		this.btnStart.visible = false;
 		this.btnStart.eventMode = 'none';
+		this.startButtonPulseTween?.kill();
 		this.setActivePlayerIndicator(this.playerOne, this.playerTwo);
 		soundManager.play('bg');
 	};
@@ -146,6 +150,8 @@ export class GameManager {
 		this.gameOver.visible = false;
 		this.draw.visible = false;
 		this.trophy.visible = false;
+		this.playAgainPulseTween?.pause(0);
+		this.playAgainButton.scale.set(1);
 
 		this.stopScalePlayerLogo();
 		this.stopAllAnimations();
@@ -181,6 +187,8 @@ export class GameManager {
 			this.playerOneName,
 			this.playerTwoName.scale,
 			this.playerTwoName,
+			this.btnStart.scale,
+			this.playAgainButton.scale,
 		].forEach(target => gsap.killTweensOf(target));
 
 		this.resetPlayerIndicators();
