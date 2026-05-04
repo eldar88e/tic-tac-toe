@@ -17,7 +17,7 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@pixi/devtools": "^2.0.1",
-    "eslint": "^10.2.1",
+    "eslint": "^10.3.0",
     "eslint-config-prettier": "^10.1.2",
     "eslint-define-config": "^2.1.0",
     "eslint-plugin-prettier": "^5.4.0",
